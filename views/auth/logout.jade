@@ -1,0 +1,18 @@
+extends ../base.jade
+
+block content
+	h3 Logout
+
+	p You have been logged out!
+	p
+		Redirecting in 10 seconds.
+		a(href="#{redirect}") Go
+
+	script.
+		var redirect = "#{redirect}";
+		if (redirect) {
+			setTimeout(function redirect_timeout() {
+				window.location = "#{redirect}";
+			}, 10000);
+		};
+

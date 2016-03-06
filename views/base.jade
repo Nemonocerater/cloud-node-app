@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    title Jarsh was here
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+  body
+    .navbar.navbar-default
+      .container
+        .navbar-header
+          .navbar-brand Test App
+
+        ul.nav.navbar-nav
+          li
+            a(href="/auth") Auth Home
+          li
+            a(href="/auth/login?redirect=/auth") Login
+          li
+            a(href="/auth/logout?redirect=/auth") Logout
+
+    .container
+      block content

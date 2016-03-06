@@ -1,0 +1,9 @@
+extends ../base.jade
+
+block content
+	h3 Login
+
+	form(action="/auth/login?redirect=#{redirect}", method="post")
+		input(type="text", name="username", placeholder="Username")
+		input(type="password", name="password", placeholder="Password")
+		input(type="submit", value="Login")
