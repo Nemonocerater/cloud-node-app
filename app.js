@@ -19,10 +19,14 @@ app.use(session({
 	signed: true
 }));
 
-// Add Login Functionality
-var user_model = require('./model-user')(config);
-app.use('/auth', require('./auth')(user_model));
-//user_model.generate_reset_hash('joe@example.com', function () {});
+// Add session to local properties accessible to views
+app.use(function (req, res, next) {
+	res.locals.session = req.session;
+	next();
+});
+
+// Add Authentication Functionality
+require('./lib/auth/')(app, config);
 
 // Basic 404 handler
 app.use(function (req, res) {

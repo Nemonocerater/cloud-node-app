@@ -1,12 +1,12 @@
 extends ../base.jade
 
 block content
-	h3 Login
+	h3 Create User
 
 	if error
-		div.alert.alert-danger #{error}
+		p.alert.alert-danger #{error}
 
-	form(action="/auth/login?redirect=#{redirect}", method="post")
+	form(action="/auth/user/create", method="post")
 		input(type="text", name="username", placeholder="Username")
 		input(type="password", name="password", placeholder="Password")
-		input(type="submit", value="Login")
+		input(type="submit", value="Create User")

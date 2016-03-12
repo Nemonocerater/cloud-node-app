@@ -5,7 +5,7 @@ block content
 
 	if error
 		div.alert.alert-danger #{error}
-	p Resetting the password for #{username}
+	p Resetting the password for #{session.reset_username}
 	form(action="/auth/reset/#{reset_hash}", method="post")
 		input(type="password", name="password", placeholder="Password")
 		input(type="password", name="confirm_password", placeholder="Confirm Password")

@@ -1,0 +1,9 @@
+extends ../base.jade
+
+block content
+	h3 Reset Password
+
+	p
+		You can reset #{session.username}'s password 
+		a(href="/auth/reset/#{reset_hash}") here
+

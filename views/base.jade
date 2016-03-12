@@ -1,23 +1,30 @@
 doctype html
 html(lang="en")
-  head
-    title Jarsh was here
-    meta(charset='utf-8')
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
-  body
-    .navbar.navbar-default
-      .container
-        .navbar-header
-          .navbar-brand Test App
+	head
+		title Login Application
+		meta(charset='utf-8')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+	body
+		.navbar.navbar-default
+			.container
+				.navbar-header
+					.navbar-brand Test App
 
-        ul.nav.navbar-nav
-          li
-            a(href="/auth") Auth Home
-          li
-            a(href="/auth/login?redirect=/auth") Login
-          li
-            a(href="/auth/logout?redirect=/auth") Logout
+				ul.nav.navbar-nav
+					li
+						a(href="/auth") Auth Home
+					li
+						a(href="/auth/user/create") Create User
+					li
+						a(href="/auth/login?redirect=/auth") Login
+					li
+						a(href="/auth/logout?redirect=/auth") Logout
+					li
+						a(href="/auth/reset/generate/#{session.username}") Reset Password
 
-    .container
-      block content
+		.container
+			block content
+		div(style="border: 1px solid black; position:absolute; bottom:0; max-height:150px; width:100%;")
+			h4 Session:
+			p #{JSON.stringify(session, null, '\t')}

@@ -1,0 +1,11 @@
+extends base.jade
+
+block content
+	h3 Unexpected Error
+	
+	p.alert.alert-danger #{error}
+	
+	if err_object
+		div Please save the following error data to help&nbsp
+			a(href="/support", target="_blank") support
+		pre #{JSON.stringify(err_object, null, '\t')}
